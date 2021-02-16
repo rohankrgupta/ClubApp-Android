@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "142766193426",
+    "firebase_url": "https://unidayz.firebaseio.com",
+    "project_id": "unidayz",
+    "storage_bucket": "unidayz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142766193426:android:dbef4829a2db76dc6751cb",
+        "android_client_info": {
+          "package_name": "com.example.unidayz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142766193426-a38pil30739d1amc3i8937tp58p585b8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unidayz",
+            "certificate_hash": "433f98ee32e12a1d8cc8ec6c8d8894d0dabdbea0"
+          }
+        },
+        {
+          "client_id": "142766193426-empbtvl3e16ut15223jgarlnvfrenkki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvDjycQYENtHxo2Ej6eF9JmpaJTlVelG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142766193426-empbtvl3e16ut15223jgarlnvfrenkki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

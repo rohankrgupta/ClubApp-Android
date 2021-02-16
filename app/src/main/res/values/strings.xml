@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">UniDayz</string>
+    <string name="descript" tools:ignore="StringEscaping">Join Millions of Students and Make most of your College Life.</string>
+    <string name="login">Log In</string>
+    <string name="hyphen">________________________</string>
+    <string name="or">OR</string>
+    <string name="acc">Don\'t have an account?</string>
+    <string name="signup"> Sign up.</string>
+    <string name="lang">English (United States) ↓</string>
+    <string name="line">__________________________________________________________</string>
+    <string name="register">Register</string>
+    <string name="alr">Already Registered? </string>
+    <string name="signin">Sign In.</string>
+    <string name="name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="dash">Welcome to the DashBoard</string>
+    <string name="ver_01">Please verify your Email</string>
+    <string name="ver_02">You\'re almost there! We sent an email to </string>
+    <string name="ver_03">Just click on the link in that email to complete your Signup. If you don\'t see it, you may need to check your spam folder.</string>
+    <string name="ver_05">Still can\'t find the email?</string>
+    <string name="ver_06">Resend Email</string>
+    <string name="ver_07">Need help? Contact Us</string>
+
+</resources>
