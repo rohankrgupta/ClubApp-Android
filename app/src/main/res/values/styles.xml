@@ -14,11 +14,16 @@
     </style>
 
     <dimen name="toolbar_height">50dp</dimen>
+
     <style name="toolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/toolbar_height</item>
         <item name="android:background">@color/whiteish</item>
         <item name="android:elevation">4dp</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

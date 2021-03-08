@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,15 +36,149 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="408dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-75dp">
+
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="406dp"
+            android:layout_height="149dp"
+            android:layout_marginTop="76dp"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bb"
+            tools:ignore="NotSibling"
+            tools:layout_editor_absoluteX="2dp" />
+
+        <TextView
+            android:id="@+id/pr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heebo_light"
+            android:text="Rohan Gupta"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/profile_pic"
+            app:layout_constraintStart_toStartOf="@+id/profile_pic"
+            app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="115dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ppp"
+            app:civ_border_color="@color/whiteish"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/back_image"
+            app:layout_constraintStart_toStartOf="@+id/back_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pr_degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Masters in Business Administration"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/pr_name"
+            app:layout_constraintStart_toStartOf="@+id/pr_name"
+            app:layout_constraintTop_toBottomOf="@+id/pr_name" />
+
+        <TextView
+            android:id="@+id/pr_uni"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-light"
+            android:text="University of Toronto"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/pr_name"
+            app:layout_constraintStart_toStartOf="@+id/pr_des"
+            app:layout_constraintTop_toBottomOf="@+id/pr_degree" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="10dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="5dp"
+            android:text="•"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pr_uni"
+            app:layout_constraintStart_toEndOf="@+id/pr_uni" />
+
+        <TextView
+            android:id="@+id/pr_add"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Toronto, Canada Area"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pr_uni"
+            app:layout_constraintStart_toEndOf="@+id/textView26" />
+
+        <TextView
+            android:id="@+id/pr_des"
+            android:layout_width="402dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/heebo_light"
+            android:text="Experienced Senior Manager with a demostrated history of working in the banking industry. Skilled in Leadership, Project Management, Business Process, Training, and Resource Management."
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/pr_degree"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/pr_degree"
+            app:layout_constraintTop_toBottomOf="@+id/pr_uni"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="15dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="👥"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="@+id/textView25"
+            app:layout_constraintEnd_toStartOf="@+id/friends_list"
+            app:layout_constraintStart_toEndOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/friends_list"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif-light"
+            android:text="154"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pr_add"
+            app:layout_constraintStart_toEndOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="12dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="4dp"
+            android:text="•"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pr_add"
+            app:layout_constraintStart_toEndOf="@+id/pr_add" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include layout="@layout/bottom_navigation_view" />
 
