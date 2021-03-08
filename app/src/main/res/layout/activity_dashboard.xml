@@ -52,9 +52,11 @@
         app:layout_constraintEnd_toEndOf="@drawable/logo" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dashrecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="650dp"
         android:layout_marginTop="1dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

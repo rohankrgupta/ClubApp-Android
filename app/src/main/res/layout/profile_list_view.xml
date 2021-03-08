@@ -2,30 +2,18 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/card_view"
+    android:layout_margin="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="10dp"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="12dp"
     app:cardPreventCornerOverlap="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-
-        <ImageView
-            android:id="@+id/back_image"
-            android:layout_width="406dp"
-            android:layout_height="149dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="3dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:srcCompat="@drawable/bb" />
 
         <TextView
             android:id="@+id/pr_name"
@@ -34,48 +22,49 @@
             android:fontFamily="@font/heebo_light"
             android:text="Rohan Gupta"
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="8sp"
             app:layout_constraintEnd_toEndOf="@+id/profile_pic"
             app:layout_constraintStart_toStartOf="@+id/profile_pic"
             app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_pic"
-            android:layout_width="115dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="64dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ppp"
             app:civ_border_color="@color/whiteish"
             app:civ_border_width="2dp"
-            app:layout_constraintEnd_toEndOf="@+id/back_image"
-            app:layout_constraintStart_toStartOf="@+id/back_image"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/pr_degree"
+            android:id="@+id/pr_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="sans-serif-light"
             android:text="Masters in Business Administration"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/pr_name"
-            app:layout_constraintStart_toStartOf="@+id/pr_name"
-            app:layout_constraintTop_toBottomOf="@+id/pr_name" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_pic"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/pr_uni"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-light"
-            android:text="University of Toronto"
+            android:text="NIT Durgapur"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/pr_name"
             app:layout_constraintStart_toStartOf="@+id/pr_des"
-            app:layout_constraintTop_toBottomOf="@+id/pr_degree" />
+            app:layout_constraintTop_toBottomOf="@+id/pr_des" />
 
         <TextView
             android:id="@+id/textView26"
@@ -93,65 +82,53 @@
             android:id="@+id/pr_add"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
+            android:layout_marginStart="8dp"
             android:fontFamily="sans-serif-light"
-            android:text="Toronto, Canada Area"
+            android:text="West Bengal, India"
             android:textSize="12sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/pr_uni"
             app:layout_constraintStart_toEndOf="@+id/textView26" />
 
         <TextView
             android:id="@+id/pr_des"
-            android:layout_width="402dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/heebo_light"
             android:text="Experienced Senior Manager with a demostrated history of working in the banking industry. Skilled in Leadership, Project Management, Business Process, Training, and Resource Management."
             android:textAlignment="center"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/pr_degree"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintStart_toStartOf="@+id/pr_degree"
-            app:layout_constraintTop_toBottomOf="@+id/pr_uni" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pr_name" />
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="15dp"
             android:layout_height="0dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-thin"
             android:text="👥"
             android:textAlignment="viewStart"
-            app:layout_constraintBottom_toBottomOf="@+id/textView25"
-            app:layout_constraintEnd_toStartOf="@+id/friends_list"
-            app:layout_constraintStart_toEndOf="@+id/textView25" />
-
-        <TextView
-            android:id="@+id/friends_list"
-            android:layout_width="wrap_content"
-            android:layout_height="17dp"
-            android:layout_marginStart="5dp"
-            android:fontFamily="sans-serif-light"
-            android:text="154"
-            android:textSize="12sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/pr_add"
-            app:layout_constraintStart_toEndOf="@+id/textView22" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView25"
+            app:layout_constraintEnd_toEndOf="@+id/pr_des" />
 
         <TextView
             android:id="@+id/textView25"
-            android:layout_width="12dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="4dp"
+            android:layout_width="11dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
             android:text="•"
             android:textAlignment="center"
-            app:layout_constraintBaseline_toBaselineOf="@+id/pr_add"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pr_uni"
             app:layout_constraintStart_toEndOf="@+id/pr_add" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
 
 
