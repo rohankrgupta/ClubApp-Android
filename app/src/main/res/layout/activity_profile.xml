@@ -48,22 +48,27 @@
             android:id="@+id/back_image"
             android:layout_width="406dp"
             android:layout_height="149dp"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="76dp"
+            android:layout_marginEnd="3dp"
             android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/bb"
-            tools:ignore="NotSibling"
-            tools:layout_editor_absoluteX="2dp" />
+            tools:ignore="NotSibling" />
 
         <TextView
             android:id="@+id/pr_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
             android:fontFamily="@font/heebo_light"
             android:text="Rohan Gupta"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/profile_pic"
+            app:layout_constraintHorizontal_bias="0.416"
             app:layout_constraintStart_toStartOf="@+id/profile_pic"
             app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
@@ -83,7 +88,7 @@
             android:id="@+id/pr_degree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-light"
             android:text="Masters in Business Administration"
             android:textSize="14sp"
@@ -129,8 +134,8 @@
 
         <TextView
             android:id="@+id/pr_des"
-            android:layout_width="402dp"
-            android:layout_height="56dp"
+            android:layout_width="405dp"
+            android:layout_height="75dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
             android:fontFamily="@font/heebo_light"
@@ -140,7 +145,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/pr_degree"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="@+id/pr_degree"
             app:layout_constraintTop_toBottomOf="@+id/pr_uni"
             app:layout_constraintVertical_bias="0.0" />
@@ -177,6 +182,24 @@
             android:textAlignment="center"
             app:layout_constraintBaseline_toBaselineOf="@+id/pr_add"
             app:layout_constraintStart_toEndOf="@+id/pr_add" />
+
+        <Button
+            android:id="@+id/signout"
+            android:layout_width="106dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/rounded_btn"
+            android:fontFamily="sans-serif-medium"
+            android:text="Signout"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/pr_des"
+            app:layout_constraintStart_toStartOf="@+id/pr_des"
+            app:layout_constraintTop_toBottomOf="@+id/pr_des"
+            app:layout_constraintVertical_bias="0.93" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

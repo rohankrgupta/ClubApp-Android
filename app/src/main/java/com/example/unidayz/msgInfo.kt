@@ -4,6 +4,9 @@ data class msgInfo(
     var username : String? = "",
     var msg : String? = "",
     var uni : String? = "",
-    var profileImageUrl: String? = ""
+    var profileImageUrl: String? = "",
+    var place : String? = ""
 
-)
+){
+    constructor() : this("", "", "", "", "", "")
+}

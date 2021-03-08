@@ -3,31 +3,34 @@ package com.example.unidayz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieAdapter
+import com.xwray.groupie.GroupieViewHolder
+import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.notif_card_view.view.*
 
 class MessageActivity : AppCompatActivity() {
 
-    val db = Firebase.firestore
 
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<MainAdapter.CustomViewHolder>? = null
+    //private var adapter: RecyclerView.Adapter<MainAdapter.CustomViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message)
 
-        val msg_recycler_view : RecyclerView = findViewById(R.id.msgrecycler)
+
         val dashBoard : BottomNavigationItemView = findViewById(R.id.nav_sch)
         val not : BottomNavigationItemView = findViewById(R.id.nav_social)
         val profile : BottomNavigationItemView = findViewById(R.id.nav_profile)
@@ -45,52 +48,54 @@ class MessageActivity : AppCompatActivity() {
             finish()
         }
         setSupportActionBar(toolbar)
-        layoutManager = LinearLayoutManager(this)
-        msg_recycler_view.layoutManager = layoutManager
 
-        adapter = MainAdapter()
-        msg_recycler_view.adapter = adapter
+        //adapter = MainAdapter()
+        //msg_recycler_view.adapter = adapter
+
+      //  val newAdapter = GroupieAdapter()
+        fetchUsers()
 
         // if user clicks at new msg
-        val newMsg : Button = findViewById(R.id.msg_new)
+       val newMsg : Button = findViewById(R.id.msg_new)
         newMsg.setOnClickListener{
             startActivity(Intent(this, NewMsgActivity::class.java))
             finish()
         }
-
         // user calls save msg fxn
-
     }
-
-    private fun saveMsgToDatabase(){
-        val uid = FirebaseAuth.getInstance().uid ?:""
-        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
-        val docRef = db.collection("users").document(uid)
-
-        var username : String = "A"
-        var uni: String = "D"
-        var profileImg: String = "S"
-        val msg_str:String = "Hello World"
-
-
-        docRef.get()
-            .addOnSuccessListener { task ->
-                val document = task.data
-
-                if (document != null) {
-
-                    if (document.getValue("useruniversity") != null)
-                        uni = document.getValue("useruniversity").toString()
-                    if (document.getValue("userprofilepic") != null)
-                        profileImg = document.getValue("userprofilepic").toString()
-                    if (document.getValue("username") != null)
-                        username = document.getValue("username").toString()
+    private fun fetchUsers(){
+        val msg_recycler_view : RecyclerView = findViewById(R.id.msgrecycler)
+        val ref  =  FirebaseDatabase.getInstance().getReference("/users")
+        ref.addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onDataChange(p0: DataSnapshot) {
+                val adapter = GroupAdapter<GroupieViewHolder>()
+                p0.children.forEach{
+                    val user = it.getValue(msgInfo::class.java)
+                    if(user != null)
+                        adapter.add(UserItem(user))
                 }
+                Log.d("NewMsgActivity", "Fetched Users")
+                msg_recycler_view.adapter = adapter
+
             }
 
-        val user = msgInfo(uid, username, msg_str, uni, profileImg)
-        ref.setValue(user)
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+    }
+}
+
+class UserItem(val user: msgInfo): Item<GroupieViewHolder>(){
+    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
+        viewHolder.itemView.msg_pr_name.text = user.username
+        viewHolder.itemView.msg_pr_des.text = user.msg
+        viewHolder.itemView.pr_uni.text = user.uni
+        viewHolder.itemView.pr_add.text = user.place
     }
 
+    override fun getLayout(): Int {
+        return R.layout.notif_card_view
+    }
 }
 

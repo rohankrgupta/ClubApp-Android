@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
@@ -20,14 +21,14 @@ class InfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
         val uid  = FirebaseAuth.getInstance().uid ?:""
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
         val docRef = db.collection("users").document(uid)
 
         docRef.get()
-            .addOnSuccessListener { task ->
-                val document = task.data
-
+            .addOnSuccessListener { document ->
                 if (document != null) {
-                    if(document.getValue("useruniversity") != null){
+
+                    if(document.get("useruniversity") != null){
                         startActivity(Intent(this, DashboardActivity::class.java))
                     }
                 }else{
@@ -48,8 +49,8 @@ class InfoActivity : AppCompatActivity() {
         val uid  = FirebaseAuth.getInstance().uid ?:""
         val profUni : String = college_name.text.toString()
         val profDeg : String = degree.text.toString()
-        val uniSt : String = editTextNumber.text.toString()
-        val uniEnd:String = editTextNumber2.text.toString()
+        val uniPlace : String = editTextNumber.text.toString()
+        val uniDes:String = editTextNumber2.text.toString()
 
         if(profUni.isEmpty()){
             college_name.error = "Please Enter Your University"
@@ -62,13 +63,13 @@ class InfoActivity : AppCompatActivity() {
             degree.requestFocus()
             return
         }
-        if(uniSt.isEmpty()){
-            editTextNumber.error = "Please Enter Valid Year"
+        if(uniPlace.isEmpty()){
+            editTextNumber.error = "Please Enter Valid Place"
             editTextNumber.requestFocus()
             return
         }
-        if(uniEnd.isEmpty()){
-            editTextNumber2.error = "Please Enter Valid  Year"
+        if(uniDes.isEmpty()){
+            editTextNumber2.error = "Please Enter Valid  Description"
             editTextNumber2.requestFocus()
             return
         }
@@ -77,8 +78,8 @@ class InfoActivity : AppCompatActivity() {
         val data = hashMapOf(
             "useruniversity" to profUni,
             "userdegree" to profDeg,
-            "useruniyears" to uniSt,
-            "useruniyeare" to uniEnd
+            "useruniPlace" to uniPlace,
+            "useruniDes" to uniDes
         )
         db.collection("users").document(uid)
             .set(data, SetOptions.merge())

@@ -148,7 +148,7 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start year *"
+        android:text="Place *"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
         app:layout_constraintStart_toStartOf="@+id/editTextNumber" />
 
@@ -156,7 +156,7 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="End year (or expected) *"
+        android:text="Tell us about yourself *"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
         app:layout_constraintStart_toStartOf="@+id/editTextNumber2" />
 
@@ -167,7 +167,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
         app:layout_constraintStart_toStartOf="@+id/textView23" />
 
@@ -178,7 +178,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/cont_btn"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
         app:layout_constraintStart_toStartOf="@+id/textView10" />

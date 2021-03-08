@@ -17,6 +17,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -129,14 +130,14 @@ class MainActivity : AppCompatActivity() {
                 ).show()
 
                 val uid  = FirebaseAuth.getInstance().uid ?:""
+                val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
                 val docRef = db.collection("users").document(uid)
 
                 docRef.get()
-                    .addOnSuccessListener { task ->
-                        val document = task.data
-
+                    .addOnSuccessListener { document ->
                         if (document != null) {
-                            if(document.getValue("useruniversity") != null){
+
+                            if(document.get("useruniversity") != null){
                                 startActivity(Intent(this, DashboardActivity::class.java))
                                 finish()
                             }else{
