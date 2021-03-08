@@ -1,6 +1,9 @@
 # UniDayz-Android-Application
 
 This is a inter-college based social network andoid application supporting live messaging features and multiple authentication channels using Firebase. Currently working on to eliminate possible bugs for deploying on the Google Play Store.
+
+If one wants to check the App without Downloading the code and deploying on Android Studio, I have also provided the .apk file. 
+
 Some Screenshots from the Project are given below 
 
 
