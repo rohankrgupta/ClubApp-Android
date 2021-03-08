@@ -5,6 +5,7 @@ Some Screenshots from the Project are given below
 
 
 ![Authentication](https://github.com/rohankrgupta/UniDayz/blob/master/Screenshot1.png)
+![](https://github.com/rohankrgupta/UniDayz/blob/master/WhatsApp%20Image%202021-03-08%20at%205.30.06%20PM%20(1).jpg)
 ![Email-Verification](https://github.com/rohankrgupta/UniDayz/blob/master/Screenshot2.png)
 ![Profile Section](https://github.com/rohankrgupta/UniDayz/blob/master/Screenshot3.png)
 ![Random](https://github.com/rohankrgupta/UniDayz/blob/master/Screenshot4.png)
